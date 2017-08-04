@@ -1,0 +1,52 @@
+<div id="client-ui">
+  <header id="client-header">
+    <team-header
+      current-user="$ctrl.currentUser"
+      ></team-header>
+    <channel-header
+      active="$ctrl.activeThread"
+      ></channel-header>
+  </header>
+
+  <div id="footer">
+    <message-input
+      on-send-message="$ctrl.sendMessage($event);"
+      ></message-input>
+  </div><!-- /#footer -->
+
+  <div id="client-body">
+    <div id="col-messages">
+      <div class="row-fluid">
+        <div id="col-channels-bg" 
+             style="z-index: 0;"></div>
+
+        <div id="col-channels">
+          <div id="channels-scroller">
+
+            <thread-list
+              name="Channels"
+              threads="$ctrl.channels"
+              active="$ctrl.activeThread"
+              on-thread-selected="$ctrl.threadSelected($event);"
+              >
+            </thread-list>
+
+            <thread-list
+              name="Direct Messages"
+              threads="$ctrl.directMessages"
+              active="$ctrl.activeThread"
+              on-thread-selected="$ctrl.threadSelected($event);"
+              >
+            </thread-list>
+
+          </div><!-- /#channels-scroller -->
+        </div><!-- /#col-channels -->
+
+        <messages
+          thread="$ctrl.activeThread"
+          ></messages>
+
+      </div><!-- /.row-fluid -->
+    </div><!-- /#col-messages -->
+  </div><!-- /#client-body -->
+</div>

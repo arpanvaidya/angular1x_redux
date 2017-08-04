@@ -1,0 +1,16 @@
+<div class="message">
+  <div class="message-gutter">
+    <div class="message-icon">
+      <a href="#"
+         class="member-image thumb"
+         ng-style="{'background-image':'url(/assets/img/avatars/thumb/{{$ctrl.message.author.name}}_48.jpg)'}"
+         ></a>
+    </div><!-- /.message-icon -->
+  </div><!-- /.message -->
+  <div class="message-content">
+    <a href="#" class="message-sender">{{ $ctrl.message.author.name }}</a>
+    <a href="#" class="timestamp">{{ $ctrl.message.sentAt | date:'h:mm a'}}</a>
+    <span class="message-body">{{ $ctrl.message.text }}</span>
+  </div><!-- /.message-content -->
+</div>
+

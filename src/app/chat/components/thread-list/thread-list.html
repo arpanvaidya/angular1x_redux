@@ -1,0 +1,20 @@
+<div class="section-holder">
+  <h2 id="channels-header">
+    <button class="channel-list-header-label btn-unstyle">
+      {{ $ctrl.name }}
+      <span class="header-count">(<span id="channel-header-count">{{ 
+          $ctrl.threads.length 
+          }}</span>)</span>
+    </button>
+  </h2>
+
+  <ul>
+    <thread-item ng-repeat="thread in $ctrl.threads"
+                 thread="thread"
+                 active="$ctrl.active"
+                 on-thread-selected="$ctrl.onThreadSelected($locals);">
+    </thread-item>
+  </ul>
+  <div class="clear-both"></div>
+
+</div><!-- /.section-holder -->

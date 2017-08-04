@@ -1,0 +1,22 @@
+<div id="messages-container">
+  <div id="msgs-scroller-div"
+       match-window-height>
+    <div id="msgs-div"
+         class="msgs-holder">
+
+      <div ng-repeat="day in $ctrl.messageDays"
+           class="day-container">
+        <div class="day-divider">
+          <div class="day-divider-label">{{ day[0].sentAt | date:'MMM d' }}</div>
+        </div><!-- /.day-divider -->
+
+        <div class="day-msgs">
+          <message 
+            message='message'
+            ng-repeat="message in day"
+            ></message>
+        </div>
+      </div><!-- /.day-container -->
+    </div><!-- /#msgs-div -->
+  </div><!-- /#msgs-scroller-div -->
+</div><!-- /#messages-container -->

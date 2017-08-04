@@ -1,0 +1,13 @@
+<div id="messages-input-container">
+  <form id="message-form">
+    <textarea id="message-input" 
+      placeholder="Send a message" 
+      autocorrect="off" 
+      autocomplete="off" 
+      spellcheck="true"
+      ng-model="$ctrl.message"
+      ng-keypress="$ctrl.sendMessage($event)"
+      ></textarea>
+    <div id="message-input-message" class=""><span></span></div>
+  </form>
+</div><!-- /#message-input-container -->
